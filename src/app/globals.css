@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* 滾動偏移設置 - 考慮固定 Navbar 高度 */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem; /* 對應 Navbar 的 h-24 (96px) */
+}
+
 /* 自定義動畫 */
 @keyframes fadeIn {
   from { 
