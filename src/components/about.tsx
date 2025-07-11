@@ -40,10 +40,10 @@ const About = () => {
           {/* 標題區塊 */}
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-800 mb-4 opacity-0 animate-[fadeInUp_1s_ease-out_forwards]">
-              關於我
+              關於 Kodea Studio
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto opacity-0 animate-[fadeInUp_1s_ease-out_0.2s_forwards]">
-              技術出身的創業實踐者，用程式與產品思維解決真實問題
+              專注將創意與技術結合，打造實用且有感的數位體驗
             </p>
           </div>
 
@@ -52,19 +52,19 @@ const About = () => {
             <div className="space-y-6 opacity-0 animate-[slideInFromLeft_1s_ease-out_0.4s_forwards]">
               <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-300">
-                  Hello，我是 Danny
+                  Hello，我們是 Kodea Studio
                 </h3>
                 <p className="text-gray-600 leading-relaxed hover:text-gray-700 transition-colors duration-300">
-                  我曾獨立承接並完成多項 Web、App 與平台型專案，從需求訪談、系統設計、開發到部署都能獨立完成，並以穩定交付為目標。透過這些經驗，我不只是寫程式，而是學會如何站在商業與產品的角度思考問題，交付真正能落地的解決方案。
+                  Kodea Studio 是一家專業的數位工作室，我們致力於將創意想法轉化為實用的數位解決方案。憑藉豐富的全端開發經驗和前瞻性的 AI 技術整合能力，我們為客戶提供從概念設計到完整實現的一站式服務。
                 </p>
                 <p className="text-gray-600 leading-relaxed hover:text-gray-700 transition-colors duration-300">
-                  無論是 AI 模型導入應用、平台系統開發，或是簡潔的品牌網站，我都專注於創造「實用、穩定、美觀」兼具的數位產品。
+                  我們不僅僅是程式開發者，更是您的數位轉型夥伴。無論是企業網站、行動應用程式、AI 功能整合，還是複雜的平台系統，我們都能以專業的技術能力和商業思維，為您打造「實用、穩定、美觀」兼具的數位產品。
                 </p>
               </div>
 
               {/* 技能亮點 */}
               <div className="space-y-4">
-                <h4 className="text-lg font-medium text-gray-800">我的專長領域：</h4>
+                <h4 className="text-lg font-medium text-gray-800">我們的核心技術：</h4>
                 <div className="grid grid-cols-2 gap-4">
                   {[
                     '前端開發',
@@ -103,7 +103,7 @@ const About = () => {
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-blue-200 to-blue-300 rounded-full flex items-center justify-center">
-                      <span className="text-5xl font-bold text-blue-700">DW</span>
+                      <span className="text-4xl font-bold text-blue-700">KS</span>
                     </div>
                   )}
                 </div>
@@ -136,13 +136,13 @@ const About = () => {
           <div className="mt-20 text-center opacity-0 animate-[fadeInUp_1s_ease-out_1.2s_forwards]">
             <div className="bg-gradient-to-r from-blue-50 to-gray-50 rounded-2xl p-8 md:p-12 hover:shadow-lg transition-all duration-500">
               <h3 className="text-2xl font-semibold text-gray-800 mb-4 hover:text-blue-600 transition-colors duration-300">
-                我的開發理念
+                我們的服務理念
               </h3>
               <blockquote className="text-lg text-gray-600 leading-relaxed italic max-w-3xl mx-auto hover:text-gray-700 transition-colors duration-300">
-                &ldquo;寫程式不是目的，讓事情順利跑起來才是。我重視溝通，也重視交付，讓你少操一點心，多一點時間做重要的事。&rdquo;
+                &ldquo;Code + Idea = 無限可能。我們相信每個創意都值得被實現，每個技術都應該服務於使用者的真實需求。讓我們成為您數位轉型路上的最佳夥伴。&rdquo;
               </blockquote>
               <div className="mt-6">
-                <span className="text-blue-600 font-medium">— Danny Wu</span>
+                <span className="text-blue-600 font-medium">— Kodea Studio</span>
               </div>
             </div>
           </div>

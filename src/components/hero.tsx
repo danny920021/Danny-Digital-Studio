@@ -17,13 +17,13 @@ export default function Hero() {
             {/* 問候語 - 增加懸停效果 */}
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-medium border border-blue-100 opacity-0 animate-[fadeIn_1s_ease-out_forwards] hover:bg-blue-100 hover:scale-105 transition-all duration-300 cursor-default">
               <span className="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
-              嗨，我是 Danny，很高興你來了！
+              歡迎來到 Kodea Studio！
             </div>
             
             {/* 主標題 - 增加字母動畫 */}
             <div className="space-y-4 opacity-0 animate-[slideUp_1s_ease-out_0.2s_forwards]">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-800 tracking-tight hover:text-blue-700 transition-colors duration-500">
-                Danny Wu
+                Kodea Studio
               </h1>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full animate-[expand_2s_ease-out_1s_forwards] origin-center"></div>
             </div>
@@ -31,7 +31,7 @@ export default function Hero() {
             {/* 職業描述 */}
             <div className="space-y-6 opacity-0 animate-[slideUp_1s_ease-out_0.4s_forwards]">
               <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-gray-700 tracking-wide hover:text-gray-800 transition-colors duration-300">
-                全端開發者 & UI/UX 設計師
+                Code + Idea = 無限可能
               </h2>
               
               {/* 技能標籤 - 增加波浪動畫 */}
@@ -58,13 +58,13 @@ export default function Hero() {
             {/* 描述文字 - 增加打字機效果樣式 */}
             <div className="max-w-3xl mx-auto py-8 opacity-0 animate-[fadeInUp_1s_ease-out_0.8s_forwards]">
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed hover:text-gray-700 transition-colors duration-300">
-                我是一位擅長前後端開發的工程師，
+                Kodea Studio 是一家專注於將創意與技術結合的數位工作室，
                 <br className="hidden md:block" />
-                也專注於將 <span className="font-medium text-gray-700 hover:text-blue-600 transition-colors duration-300">AI 模型應用整合</span> 進產品中，
+                我們專精於 <span className="font-medium text-gray-700 hover:text-blue-600 transition-colors duration-300">AI 模型整合應用</span> 與全端開發，
                 <br />
-                無論你是想打造品牌網站、開發 App，還是把 AI 功能加進你的產品裡，
+                無論是品牌網站、應用程式開發，還是 AI 功能導入，
                 <br />
-                我都能從 <span className="font-medium text-gray-700 hover:text-blue-600 transition-colors duration-300">設計、開發到整合，一次幫你完成</span>。
+                我們都能提供從 <span className="font-medium text-gray-700 hover:text-blue-600 transition-colors duration-300">概念設計到完整實現的一站式服務</span>。
               </p>
             </div>
             

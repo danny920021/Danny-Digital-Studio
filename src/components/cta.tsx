@@ -7,10 +7,10 @@ const Cta = () => {
       <div className="container mx-auto px-4 md:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-800 mb-6">
-            準備好開始了嗎？
+            準備好開始您的數位轉型之旅了嗎？
           </h2>
           <p className="text-lg text-gray-500 mb-12">
-            我對新的合作機會與專案挑戰永遠抱持開放態度。無論您有天馬行空的想法，或是需要具體的技術支援，都歡迎與我聊聊。
+            Kodea Studio 對新的合作機會與創新專案挑戰永遠抱持開放態度。無論您有天馬行空的創意想法，或是需要具體的技術解決方案，我們都很樂意與您討論。
           </p>
           
           <div className="space-y-6">
