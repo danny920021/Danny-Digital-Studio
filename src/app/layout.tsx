@@ -6,10 +6,21 @@ import Navbar from "@/components/navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Danny Wu - 全端開發者 & UI/UX 設計師",
-  description: "Danny Wu 的個人作品集網站，展示網頁開發、App開發與UI/UX設計專案。",
+  title: "Kodea Studio - 將創意與技術結合的數位工作室",
+  description: "Kodea Studio 專注將創意與技術結合，打造實用且有感的數位體驗。提供網頁開發、App開發、AI模型整合與UI/UX設計服務。Kodea = Code + Idea.",
+  keywords: "Kodea Studio, 網頁開發, App開發, AI整合, UI/UX設計, 全端開發, 數位工作室",
+  authors: [{ name: "Danny Wu", url: "https://kodea-studio.com" }],
+  creator: "Kodea Studio",
+  publisher: "Kodea Studio",
   icons: {
     icon: '/favicon.svg',
+  },
+  openGraph: {
+    title: "Kodea Studio - 將創意與技術結合的數位工作室",
+    description: "專注將創意與技術結合，打造實用且有感的數位體驗。Kodea = Code + Idea.",
+    url: "https://kodea-studio.com",
+    siteName: "Kodea Studio",
+    type: "website",
   },
 };
 
