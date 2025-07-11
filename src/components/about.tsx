@@ -139,7 +139,7 @@ const About = () => {
                 我的開發理念
               </h3>
               <blockquote className="text-lg text-gray-600 leading-relaxed italic max-w-3xl mx-auto hover:text-gray-700 transition-colors duration-300">
-                "寫程式不是目的，讓事情順利跑起來才是。我重視溝通，也重視交付，讓你少操一點心，多一點時間做重要的事。"
+                &ldquo;寫程式不是目的，讓事情順利跑起來才是。我重視溝通，也重視交付，讓你少操一點心，多一點時間做重要的事。&rdquo;
               </blockquote>
               <div className="mt-6">
                 <span className="text-blue-600 font-medium">— Danny Wu</span>
