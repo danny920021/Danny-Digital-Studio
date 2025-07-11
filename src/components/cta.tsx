@@ -17,10 +17,10 @@ const Cta = () => {
             <div className="flex items-center justify-center space-x-3">
               <FiMail className="w-5 h-5 text-gray-600" />
               <a 
-                href="mailto:danny79004@gmail.com" 
+                href="mailto:contact@kodea-studio.com" 
                 className="text-lg text-gray-700 hover:text-blue-600 transition-colors"
               >
-                danny79004@gmail.com
+                contact@kodea-studio.com
               </a>
             </div>
             

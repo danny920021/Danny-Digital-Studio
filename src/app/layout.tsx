@@ -1,9 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Noto_Sans_TC } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const notoSansTC = Noto_Sans_TC({ 
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-noto-sans-tc",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Kodea Studio - 將創意與技術結合的數位工作室",
@@ -13,7 +24,7 @@ export const metadata: Metadata = {
   creator: "Kodea Studio",
   publisher: "Kodea Studio",
   icons: {
-    icon: '/favicon.svg',
+    icon: '/favicon.svg?v=2',
   },
   openGraph: {
     title: "Kodea Studio - 將創意與技術結合的數位工作室",
@@ -31,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-TW">
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${notoSansTC.variable} font-sans`}>
         <Navbar />
         {children}
       </body>
