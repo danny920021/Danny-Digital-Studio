@@ -1,0 +1,430 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+    
+    <script>tailwind.config = {
+  "theme": {
+    "extend": {
+      "colors": {
+        "cold-gray-light": "#DADDE3",
+        "cold-gray-medium": "#A5A8AD",
+        "cold-gray-dark": "#2B2C30",
+        "misty-purple-light": "#F2EFF6",
+        "misty-purple": "#C7BCD7",
+        "misty-purple-dark": "#9A8FB6"
+      },
+      "fontFamily": {
+        "sans": [
+          "Inter",
+          "sans-serif"
+        ],
+        "serif": [
+          "Playfair Display",
+          "serif"
+        ]
+      }
+    }
+  }
+};</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&amp;display=swap"><style>
+      body {
+        font-family: 'Inter', sans-serif !important;
+      }
+      
+      /* Preserve Font Awesome icons */
+      .fa, .fas, .far, .fal, .fab {
+        font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+      }
+    </style><style>
+  .highlighted-section {
+    outline: 2px solid #3F20FB;
+    background-color: rgba(63, 32, 251, 0.1);
+  }
+
+  .edit-button {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  </style></head>
+<body class="bg-white font-sans">
+    
+    <!-- Header -->
+    <header id="header" class="fixed w-full z-50 bg-white/90 backdrop-blur-sm">
+        <div class="container mx-auto px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="text-2xl font-bold text-cold-gray-dark">
+                    <span class="text-misty-purple-dark">Kodea</span> Studio
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <span class="text-misty-purple-dark font-medium cursor-pointer">關於我們</span>
+                <span class="text-cold-gray-dark hover:text-misty-purple-dark transition-colors cursor-pointer">服務項目</span>
+                <span class="text-cold-gray-dark hover:text-misty-purple-dark transition-colors cursor-pointer">精選作品</span>
+                <span class="text-cold-gray-dark hover:text-misty-purple-dark transition-colors cursor-pointer">客戶評價</span>
+                <span class="px-5 py-2 bg-misty-purple text-white rounded-full hover:bg-misty-purple-dark transition-colors cursor-pointer">聯絡我們</span>
+            </nav>
+            <button class="md:hidden text-cold-gray-dark">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Title Section -->
+    <section id="page-title" class="pt-32 pb-16 bg-white">
+        <div class="container mx-auto px-8">
+            <div class="max-w-3xl">
+                <div class="inline-block px-4 py-1 bg-misty-purple-light text-misty-purple-dark text-sm font-medium mb-4">
+                    關於我們
+                </div>
+                <h1 class="text-5xl font-serif font-bold text-cold-gray-dark mb-6">
+                    認識 Kodea Studio<br>
+                    <span class="text-misty-purple-dark">創意與科技的完美結合</span>
+                </h1>
+                <p class="text-cold-gray-dark text-xl leading-relaxed">
+                    我們是一支充滿創意與熱情的團隊，致力於為品牌打造獨特的數位體驗，幫助您在競爭激烈的市場中脫穎而出。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-20 bg-white">
+        <div class="container mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="relative">
+                        <div class="absolute -top-10 -left-10 w-40 h-40 bg-misty-purple-light rounded-full z-0"></div>
+                        <div class="relative z-10 rounded-xl overflow-hidden">
+                            <img class="w-full h-auto" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/b80521db56-164a9220a2de0a765738.png" alt="minimalist modern design studio with creative team working, cool gray and misty purple color scheme, elegant workspace">
+                        </div>
+                    </div>
+                </div>
+                <div id="brand-vision">
+                    <div class="inline-block px-4 py-1 bg-misty-purple-light text-misty-purple-dark text-sm font-medium mb-4">
+                        品牌理念與願景
+                    </div>
+                    <h2 class="text-4xl font-serif font-bold text-cold-gray-dark mb-6">
+                        我們相信設計的力量<br>能夠改變品牌體驗
+                    </h2>
+                    <p class="text-cold-gray-dark mb-6 leading-relaxed">
+                        Kodea Studio 成立於 2018 年，我們相信優秀的設計不僅僅是美觀，更應該是有策略、有目的的溝通工具。我們致力於將創意與科技融合，為品牌創造獨特的數位體驗。
+                    </p>
+                    <p class="text-cold-gray-dark mb-8 leading-relaxed">
+                        我們的使命是幫助中小企業建立強大的品牌形象，通過精心設計的網站和數位解決方案，讓您的品牌在競爭激烈的市場中脫穎而出，吸引理想客戶，實現業務增長。
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-lg bg-misty-purple-light flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-lightbulb text-misty-purple-dark text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-cold-gray-dark">創新思維</h4>
+                                <p class="text-cold-gray-medium">突破常規，創造獨特</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-lg bg-misty-purple-light flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-gem text-misty-purple-dark text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-cold-gray-dark">精緻工藝</h4>
+                                <p class="text-cold-gray-medium">注重細節，精益求精</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-misty-purple-light">
+        <div class="container mx-auto px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-1 bg-white text-misty-purple-dark text-sm font-medium mb-4">
+                    團隊介紹
+                </div>
+                <h2 class="text-4xl font-serif font-bold text-cold-gray-dark mb-6">
+                    認識我們的創意團隊
+                </h2>
+                <p class="text-cold-gray-dark max-w-2xl mx-auto">
+                    我們的團隊由充滿熱情和專業知識的設計師、開發者和策略專家組成，致力於為您的品牌創造獨特的數位體驗。
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div id="team-member-1" class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="林志明" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-cold-gray-dark mb-1">林志明</h3>
+                    <p class="text-misty-purple-dark font-medium mb-4">創辦人 / 創意總監</p>
+                    <p class="text-cold-gray-medium mb-6">
+                        擁有 10 年以上的設計經驗，專注於品牌策略與用戶體驗設計。
+                    </p>
+                    <div class="flex justify-center space-x-3">
+                        <span class="w-8 h-8 rounded-full bg-misty-purple-light flex items-center justify-center text-misty-purple-dark hover:bg-misty-purple hover:text-white transition-colors cursor-pointer">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </span>
+                        <span class="w-8 h-8 rounded-full bg-misty-purple-light flex items-center justify-center text-misty-purple-dark hover:bg-misty-purple hover:text-white transition-colors cursor-pointer">
+                            <i class="fa-brands fa-behance"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div id="team-member-2" class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="張美玲" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-cold-gray-dark mb-1">張美玲</h3>
+                    <p class="text-misty-purple-dark font-medium mb-4">UI/UX 設計總監</p>
+                    <p class="text-cold-gray-medium mb-6">
+                        擅長用戶體驗設計，致力於創造直觀且美觀的數位產品。
+                    </p>
+                    <div class="flex justify-center space-x-3">
+                        <span class="w-8 h-8 rounded-full bg-misty-purple-light flex items-center justify-center text-misty-purple-dark hover:bg-misty-purple hover:text-white transition-colors cursor-pointer">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </span>
+                        <span class="w-8 h-8 rounded-full bg-misty-purple-light flex items-center justify-center text-misty-purple-dark hover:bg-misty-purple hover:text-white transition-colors cursor-pointer">
+                            <i class="fa-brands fa-dribbble"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div id="team-member-3" class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="王建中" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-cold-gray-dark mb-1">王建中</h3>
+                    <p class="text-misty-purple-dark font-medium mb-4">技術總監</p>
+                    <p class="text-cold-gray-medium mb-6">
+                        專注於前端開發與 AI 技術整合，打造高效能的數位解決方案。
+                    </p>
+                    <div class="flex justify-center space-x-3">
+                        <span class="w-8 h-8 rounded-full bg-misty-purple-light flex items-center justify-center text-misty-purple-dark hover:bg-misty-purple hover:text-white transition-colors cursor-pointer">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </span>
+                        <span class="w-8 h-8 rounded-full bg-misty-purple-light flex items-center justify-center text-misty-purple-dark hover:bg-misty-purple hover:text-white transition-colors cursor-pointer">
+                            <i class="fa-brands fa-github"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div id="team-member-4" class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-6.jpg" alt="李雅婷" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-cold-gray-dark mb-1">李雅婷</h3>
+                    <p class="text-misty-purple-dark font-medium mb-4">專案經理</p>
+                    <p class="text-cold-gray-medium mb-6">
+                        負責專案協調與客戶溝通，確保每個專案都能按時高質量交付。
+                    </p>
+                    <div class="flex justify-center space-x-3">
+                        <span class="w-8 h-8 rounded-full bg-misty-purple-light flex items-center justify-center text-misty-purple-dark hover:bg-misty-purple hover:text-white transition-colors cursor-pointer">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </span>
+                        <span class="w-8 h-8 rounded-full bg-misty-purple-light flex items-center justify-center text-misty-purple-dark hover:bg-misty-purple hover:text-white transition-colors cursor-pointer">
+                            <i class="fa-brands fa-instagram"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Profile Section -->
+    <section id="company-profile" class="py-20 bg-white">
+        <div class="container mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div id="company-info">
+                    <div class="inline-block px-4 py-1 bg-misty-purple-light text-misty-purple-dark text-sm font-medium mb-4">
+                        公司簡介
+                    </div>
+                    <h2 class="text-4xl font-serif font-bold text-cold-gray-dark mb-6">
+                        從創意到實現<br>我們一路相伴
+                    </h2>
+                    <p class="text-cold-gray-dark mb-6 leading-relaxed">
+                        Kodea Studio 成立於 2018 年，總部位於台北市，是一家專注於品牌形象網站設計的創意科技工作室。過去五年來，我們已經為超過 120 家企業提供了高質量的設計服務，涵蓋了科技、零售、教育、金融等多個行業。
+                    </p>
+                    <p class="text-cold-gray-dark mb-8 leading-relaxed">
+                        我們的核心優勢在於將設計美學與科技創新相結合，為客戶打造既美觀又實用的數位解決方案。我們相信，成功的設計不僅能提升品牌形象，還能為企業帶來實際的業務增長。
+                    </p>
+                    <div class="grid grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <div class="text-3xl font-bold text-misty-purple-dark mb-1">120+</div>
+                            <div class="text-cold-gray-medium">成功案例</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-misty-purple-dark mb-1">15+</div>
+                            <div class="text-cold-gray-medium">專業團隊成員</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-misty-purple-dark mb-1">5+</div>
+                            <div class="text-cold-gray-medium">年設計經驗</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-misty-purple-dark mb-1">8+</div>
+                            <div class="text-cold-gray-medium">設計獎項</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="space-y-6">
+                            <div class="rounded-xl overflow-hidden">
+                                <img class="w-full h-auto" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/a217ca870f-71fe59db210054a60b6f.png" alt="minimalist elegant office space with misty purple accents, creative design studio environment">
+                            </div>
+                            <div class="rounded-xl overflow-hidden">
+                                <img class="w-full h-auto" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e76dea25fb-7ba50e9b0fbbc5cc48ef.png" alt="designers collaborating in a modern workspace, cool gray interior with purple accents">
+                            </div>
+                        </div>
+                        <div class="space-y-6 mt-12">
+                            <div class="rounded-xl overflow-hidden">
+                                <img class="w-full h-auto" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/0a640ab9ad-e5a5e492e3cccf5ee97d.png" alt="creative team brainstorming session in a minimalist studio, gray and purple color scheme">
+                            </div>
+                            <div class="rounded-xl overflow-hidden">
+                                <img class="w-full h-auto" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/2913706aca-2a135c7b2c96202933ee.png" alt="elegant design awards on display in a modern office, minimalist style">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Mini Section -->
+    <section id="mini-cta" class="py-16 bg-misty-purple-light">
+        <div class="container mx-auto px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h2 class="text-3xl font-serif font-bold text-cold-gray-dark mb-4">
+                        準備好與我們合作了嗎？
+                    </h2>
+                    <p class="text-cold-gray-dark max-w-xl">
+                        無論您是需要全新的品牌網站，還是尋求數位轉型的合作夥伴，我們都能為您提供專業的服務。
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-4">
+                    <span class="px-8 py-3 bg-misty-purple text-white rounded-full hover:bg-misty-purple-dark transition-colors cursor-pointer">
+                        聯絡我們
+                    </span>
+                    <span class="px-8 py-3 border border-cold-gray-dark text-cold-gray-dark rounded-full hover:bg-cold-gray-dark hover:text-white transition-colors cursor-pointer">
+                        合作提案
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-cold-gray-dark py-12">
+        <div class="container mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="text-2xl font-bold text-white mb-6">
+                        <span class="text-misty-purple">Kodea</span> Studio
+                    </div>
+                    <p class="text-cold-gray-medium mb-6">
+                        創意驅動，科技引領未來。我們為品牌打造獨特的數位體驗。
+                    </p>
+                    <div class="flex space-x-4">
+                        <span class="w-10 h-10 rounded-full bg-cold-gray-dark border border-cold-gray-medium flex items-center justify-center text-cold-gray-medium hover:bg-misty-purple hover:text-white hover:border-misty-purple transition-colors cursor-pointer">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </span>
+                        <span class="w-10 h-10 rounded-full bg-cold-gray-dark border border-cold-gray-medium flex items-center justify-center text-cold-gray-medium hover:bg-misty-purple hover:text-white hover:border-misty-purple transition-colors cursor-pointer">
+                            <i class="fa-brands fa-instagram"></i>
+                        </span>
+                        <span class="w-10 h-10 rounded-full bg-cold-gray-dark border border-cold-gray-medium flex items-center justify-center text-cold-gray-medium hover:bg-misty-purple hover:text-white hover:border-misty-purple transition-colors cursor-pointer">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </span>
+                        <span class="w-10 h-10 rounded-full bg-cold-gray-dark border border-cold-gray-medium flex items-center justify-center text-cold-gray-medium hover:bg-misty-purple hover:text-white hover:border-misty-purple transition-colors cursor-pointer">
+                            <i class="fa-brands fa-behance"></i>
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">服務項目</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">品牌形象網站設計</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">AI 導入與整合</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">App 開發</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">數位行銷策略</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">UI/UX 設計</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">關於我們</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">公司簡介</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">團隊成員</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">作品集</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">客戶評價</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">聯絡我們</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">訂閱電子報</h4>
+                    <p class="text-cold-gray-medium mb-4">
+                        訂閱我們的電子報，獲取最新的設計趨勢和科技資訊。
+                    </p>
+                    <form class="flex">
+                        <input type="email" class="flex-grow px-4 py-2 bg-cold-gray-dark border border-cold-gray-medium rounded-l-lg focus:outline-none focus:border-misty-purple" placeholder="您的電子郵件">
+                        <button type="submit" class="bg-misty-purple text-white px-4 py-2 rounded-r-lg hover:bg-misty-purple-dark transition-colors">
+                            訂閱
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-cold-gray-medium pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-cold-gray-medium mb-4 md:mb-0">
+                    © 2023 Kodea Studio. All rights reserved.
+                </div>
+                <div class="flex space-x-6">
+                    <span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">隱私政策</span>
+                    <span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">服務條款</span>
+                    <span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">Cookie 政策</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple scroll animation for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Scroll header background change
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+
+</body></html>

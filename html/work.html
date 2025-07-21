@@ -1,0 +1,477 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+    
+    <script>tailwind.config = {
+  "theme": {
+    "extend": {
+      "colors": {
+        "cold-gray-light": "#DADDE3",
+        "cold-gray-medium": "#A5A8AD",
+        "cold-gray-dark": "#2B2C30",
+        "misty-purple-light": "#F2EFF6",
+        "misty-purple": "#C7BCD7",
+        "misty-purple-dark": "#9A8FB6"
+      },
+      "fontFamily": {
+        "sans": [
+          "Inter",
+          "sans-serif"
+        ],
+        "serif": [
+          "Playfair Display",
+          "serif"
+        ]
+      }
+    }
+  }
+};</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&amp;display=swap"><style>
+      body {
+        font-family: 'Inter', sans-serif !important;
+      }
+      
+      /* Preserve Font Awesome icons */
+      .fa, .fas, .far, .fal, .fab {
+        font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+      }
+    </style><style>
+  .highlighted-section {
+    outline: 2px solid #3F20FB;
+    background-color: rgba(63, 32, 251, 0.1);
+  }
+
+  .edit-button {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  </style></head>
+<body class="bg-white font-sans">
+    
+    <!-- Header -->
+    <header id="header" class="fixed w-full z-50 bg-white/90 backdrop-blur-sm">
+        <div class="container mx-auto px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="text-2xl font-bold text-cold-gray-dark">
+                    <span class="text-misty-purple-dark">Kodea</span> Studio
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <span class="text-cold-gray-dark hover:text-misty-purple-dark transition-colors cursor-pointer">關於我們</span>
+                <span class="text-cold-gray-dark hover:text-misty-purple-dark transition-colors cursor-pointer">服務項目</span>
+                <span class="text-misty-purple-dark font-medium cursor-pointer">精選作品</span>
+                <span class="text-cold-gray-dark hover:text-misty-purple-dark transition-colors cursor-pointer">客戶評價</span>
+                <span class="px-5 py-2 bg-misty-purple text-white rounded-full hover:bg-misty-purple-dark transition-colors cursor-pointer">聯絡我們</span>
+            </nav>
+            <button class="md:hidden text-cold-gray-dark">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section id="page-title" class="pt-32 pb-16 bg-misty-purple-light">
+        <div class="container mx-auto px-8">
+            <div class="max-w-3xl">
+                <div class="inline-block px-4 py-1 bg-white text-misty-purple-dark text-sm font-medium mb-4">
+                    作品案例
+                </div>
+                <h1 class="text-5xl md:text-6xl font-serif font-bold text-cold-gray-dark leading-tight mb-6">
+                    我們的創意<br><span class="text-misty-purple-dark">打造獨特體驗</span>
+                </h1>
+                <p class="text-cold-gray-dark text-xl max-w-lg">
+                    探索我們為各行業客戶打造的精選作品，展現我們對設計與技術的專業追求。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Project -->
+    <section id="featured-project" class="py-16 bg-white">
+        <div class="container mx-auto px-8">
+            <div class="inline-block px-4 py-1 bg-misty-purple-light text-misty-purple-dark text-sm font-medium mb-4">
+                精選專案
+            </div>
+            <h2 class="text-4xl font-serif font-bold text-cold-gray-dark mb-12">
+                近期代表作品
+            </h2>
+            
+            <div id="featured-project-item" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="absolute -top-8 -left-8 w-32 h-32 bg-misty-purple-light rounded-full z-0"></div>
+                    <div class="relative z-10 rounded-xl overflow-hidden shadow-lg">
+                        <img class="w-full h-auto" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/12020865f7-4be5347d113f5acbd0a8.png" alt="Lumina luxury brand website, elegant minimalist design with cold gray and misty purple color scheme">
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center mb-4">
+                        <span class="bg-misty-purple text-white text-xs px-3 py-1 rounded-full mr-2">品牌形象</span>
+                        <span class="bg-cold-gray-light text-cold-gray-dark text-xs px-3 py-1 rounded-full">電子商務</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-cold-gray-dark mb-4">Lumina 精品品牌網站</h3>
+                    <p class="text-cold-gray-medium leading-relaxed mb-6">
+                        為高端精品品牌 Lumina 打造的全新品牌形象網站，結合優雅的視覺設計與流暢的用戶體驗，完美展現品牌的奢華定位與產品質感。網站採用極簡設計風格，以大量留白和細膩的動態效果，為用戶創造沉浸式的瀏覽體驗。
+                    </p>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-misty-purple-dark mr-3"></i>
+                            <span class="text-cold-gray-dark">響應式設計，完美適配各種設備</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-misty-purple-dark mr-3"></i>
+                            <span class="text-cold-gray-dark">整合電子商務功能，提升轉化率</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-misty-purple-dark mr-3"></i>
+                            <span class="text-cold-gray-dark">優化網站速度，提供流暢瀏覽體驗</span>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <span class="inline-flex items-center text-misty-purple-dark font-medium hover:text-misty-purple transition-colors cursor-pointer">
+                            查看專案詳情 <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Categories -->
+    <section id="project-categories" class="py-16 bg-cold-gray-light">
+        <div class="container mx-auto px-8">
+            <div class="text-center mb-12">
+                <div class="inline-block px-4 py-1 bg-white text-misty-purple-dark text-sm font-medium mb-4">
+                    專案分類
+                </div>
+                <h2 class="text-4xl font-serif font-bold text-cold-gray-dark mb-6">
+                    依照類型瀏覽我們的作品
+                </h2>
+                <p class="text-cold-gray-dark max-w-2xl mx-auto">
+                    探索我們在不同領域的專業作品，每一個專案都代表著我們對卓越設計與創新技術的追求。
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Category 1 -->
+                <div id="category-1" class="bg-white rounded-xl overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/12020865f7-4be5347d113f5acbd0a8.png" alt="Brand website designs, minimalist elegant style with gray and purple accents">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-xl font-bold text-white">品牌形象網站</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-cold-gray-medium mb-4">為品牌打造獨特的視覺識別和網站體驗，展現品牌價值與專業形象。</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-misty-purple-dark">12 個專案</span>
+                            <span class="text-misty-purple-dark">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category 2 -->
+                <div id="category-2" class="bg-white rounded-xl overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/241bbad627-fe7d41914d0323e0b9ed.png" alt="E-commerce website designs, clean modern interfaces with gray and purple color scheme">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-xl font-bold text-white">電子商務平台</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-cold-gray-medium mb-4">設計高轉化率的電商網站，提供流暢的購物體驗和完善的後台管理系統。</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-misty-purple-dark">8 個專案</span>
+                            <span class="text-misty-purple-dark">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category 3 -->
+                <div id="category-3" class="bg-white rounded-xl overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/fef394be14-9fcaa16c4e6a3812b3f7.png" alt="Mobile app interfaces, minimalist design with misty purple accents">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-xl font-bold text-white">移動應用程式</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-cold-gray-medium mb-4">開發功能強大且用戶友好的移動應用程式，提供流暢的用戶體驗。</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-misty-purple-dark">10 個專案</span>
+                            <span class="text-misty-purple-dark">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category 4 -->
+                <div id="category-4" class="bg-white rounded-xl overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/5808f3f0fb-989f4091efb379249fe9.png" alt="AI integration projects, minimalist tech interfaces with purple accents">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-xl font-bold text-white">AI 整合應用</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-cold-gray-medium mb-4">將 AI 技術整合至網站和應用程式，提升用戶體驗和業務效率。</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-misty-purple-dark">6 個專案</span>
+                            <span class="text-misty-purple-dark">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section id="project-gallery" class="py-16 bg-white">
+        <div class="container mx-auto px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <div class="inline-block px-4 py-1 bg-misty-purple-light text-misty-purple-dark text-sm font-medium mb-4">
+                        作品集
+                    </div>
+                    <h2 class="text-4xl font-serif font-bold text-cold-gray-dark">
+                        探索更多精選作品
+                    </h2>
+                </div>
+                <div class="mt-6 md:mt-0 flex gap-2">
+                    <span class="px-4 py-2 bg-misty-purple text-white rounded-full cursor-pointer">全部</span>
+                    <span class="px-4 py-2 border border-cold-gray-light text-cold-gray-dark rounded-full cursor-pointer">品牌形象</span>
+                    <span class="px-4 py-2 border border-cold-gray-light text-cold-gray-dark rounded-full cursor-pointer">電子商務</span>
+                    <span class="px-4 py-2 border border-cold-gray-light text-cold-gray-dark rounded-full cursor-pointer">App 開發</span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div id="project-1" class="group">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/12020865f7-4be5347d113f5acbd0a8.png" alt="Lumina luxury brand website, elegant minimalist design">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white font-medium cursor-pointer">查看詳情 <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-cold-gray-dark mb-2">Lumina 精品品牌網站</h3>
+                    <p class="text-cold-gray-medium">品牌形象網站設計 / UI/UX</p>
+                </div>
+                
+                <!-- Project 2 -->
+                <div id="project-2" class="group">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/fef394be14-9fcaa16c4e6a3812b3f7.png" alt="Tempo productivity app interface, clean modern design">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white font-medium cursor-pointer">查看詳情 <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-cold-gray-dark mb-2">Tempo 生產力應用程式</h3>
+                    <p class="text-cold-gray-medium">App 開發 / UI 設計</p>
+                </div>
+                
+                <!-- Project 3 -->
+                <div id="project-3" class="group">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/241bbad627-fe7d41914d0323e0b9ed.png" alt="Serene e-commerce platform, elegant minimalist design">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white font-medium cursor-pointer">查看詳情 <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-cold-gray-dark mb-2">Serene 電商平台</h3>
+                    <p class="text-cold-gray-medium">電商網站 / 品牌策略</p>
+                </div>
+                
+                <!-- Project 4 -->
+                <div id="project-4" class="group">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/5808f3f0fb-989f4091efb379249fe9.png" alt="AI assistant dashboard, minimalist tech interface">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white font-medium cursor-pointer">查看詳情 <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-cold-gray-dark mb-2">Nova AI 助理平台</h3>
+                    <p class="text-cold-gray-medium">AI 整合 / 用戶介面設計</p>
+                </div>
+                
+                <!-- Project 5 -->
+                <div id="project-5" class="group">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/12020865f7-4be5347d113f5acbd0a8.png" alt="Corporate website design with misty purple accents">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white font-medium cursor-pointer">查看詳情 <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-cold-gray-dark mb-2">Zenith 科技企業網站</h3>
+                    <p class="text-cold-gray-medium">品牌形象 / 企業網站</p>
+                </div>
+                
+                <!-- Project 6 -->
+                <div id="project-6" class="group">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/fef394be14-9fcaa16c4e6a3812b3f7.png" alt="Financial app interface with purple accents">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white font-medium cursor-pointer">查看詳情 <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-cold-gray-dark mb-2">Finex 金融管理應用</h3>
+                    <p class="text-cold-gray-medium">App 開發 / 金融科技</p>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-12">
+                <span class="px-8 py-3 bg-misty-purple text-white rounded-full hover:bg-misty-purple-dark transition-colors cursor-pointer">
+                    查看更多作品
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="py-16 bg-misty-purple-light">
+        <div class="container mx-auto px-8">
+            <div class="bg-gradient-to-r from-cold-gray-dark to-misty-purple-dark rounded-2xl overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="p-12 md:p-16">
+                        <h2 class="text-4xl font-serif font-bold text-white mb-6">
+                            準備好打造您的<br>品牌數位體驗了嗎？
+                        </h2>
+                        <p class="text-cold-gray-light mb-8 leading-relaxed">
+                            無論您需要全新的品牌網站、移動應用程式還是 AI 整合解決方案，我們都能為您提供專業的設計與開發服務。
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="px-8 py-3 bg-white text-misty-purple-dark rounded-full hover:bg-cold-gray-light transition-colors cursor-pointer">
+                                預約免費諮詢
+                            </span>
+                            <span class="px-8 py-3 border border-white text-white rounded-full hover:bg-white/10 transition-colors cursor-pointer">
+                                了解服務項目
+                            </span>
+                        </div>
+                    </div>
+                    <div class="relative hidden md:block">
+                        <img class="absolute inset-0 w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/12020865f7-4be5347d113f5acbd0a8.png" alt="Designer working on website mockup">
+                        <div class="absolute inset-0 bg-misty-purple-dark/30 backdrop-blur-sm"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-cold-gray-dark py-12">
+        <div class="container mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="text-2xl font-bold text-white mb-6">
+                        <span class="text-misty-purple">Kodea</span> Studio
+                    </div>
+                    <p class="text-cold-gray-medium mb-6">
+                        創意驅動，科技引領未來。我們為品牌打造獨特的數位體驗。
+                    </p>
+                    <div class="flex space-x-4">
+                        <span class="w-10 h-10 rounded-full bg-cold-gray-dark border border-cold-gray-medium flex items-center justify-center text-cold-gray-medium hover:bg-misty-purple hover:text-white hover:border-misty-purple transition-colors cursor-pointer">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </span>
+                        <span class="w-10 h-10 rounded-full bg-cold-gray-dark border border-cold-gray-medium flex items-center justify-center text-cold-gray-medium hover:bg-misty-purple hover:text-white hover:border-misty-purple transition-colors cursor-pointer">
+                            <i class="fa-brands fa-instagram"></i>
+                        </span>
+                        <span class="w-10 h-10 rounded-full bg-cold-gray-dark border border-cold-gray-medium flex items-center justify-center text-cold-gray-medium hover:bg-misty-purple hover:text-white hover:border-misty-purple transition-colors cursor-pointer">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </span>
+                        <span class="w-10 h-10 rounded-full bg-cold-gray-dark border border-cold-gray-medium flex items-center justify-center text-cold-gray-medium hover:bg-misty-purple hover:text-white hover:border-misty-purple transition-colors cursor-pointer">
+                            <i class="fa-brands fa-behance"></i>
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">服務項目</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">品牌形象網站設計</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">AI 導入與整合</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">App 開發</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">數位行銷策略</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">UI/UX 設計</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">關於我們</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">公司簡介</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">團隊成員</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">作品集</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">客戶評價</span></li>
+                        <li><span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">聯絡我們</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">訂閱電子報</h4>
+                    <p class="text-cold-gray-medium mb-4">
+                        訂閱我們的電子報，獲取最新的設計趨勢和科技資訊。
+                    </p>
+                    <form class="flex">
+                        <input type="email" class="flex-grow px-4 py-2 bg-cold-gray-dark border border-cold-gray-medium rounded-l-lg focus:outline-none focus:border-misty-purple" placeholder="您的電子郵件">
+                        <button type="submit" class="bg-misty-purple text-white px-4 py-2 rounded-r-lg hover:bg-misty-purple-dark transition-colors">
+                            訂閱
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-cold-gray-medium pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-cold-gray-medium mb-4 md:mb-0">
+                    © 2023 Kodea Studio. All rights reserved.
+                </div>
+                <div class="flex space-x-6">
+                    <span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">隱私政策</span>
+                    <span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">服務條款</span>
+                    <span class="text-cold-gray-medium hover:text-misty-purple transition-colors cursor-pointer">Cookie 政策</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple scroll animation for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Scroll header background change
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+
+</body></html>
