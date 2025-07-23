@@ -180,21 +180,29 @@ const Home = ({ footerRef }) => {
         
         {/* Main Content - Centered */}
         <div className="container mx-auto px-8 relative z-20 text-center">
-          {/* Super Large Title */}
+          {/* Enhanced Super Large Title */}
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white leading-none mb-8 tracking-tight">
-            <span className="block transform hover:scale-105 transition-transform duration-500">
+            <span className={`block transform transition-all duration-1000 ease-out ${
+              visibleSections.has('section-0') ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-16 -rotate-3'
+            }`}>
               打造
             </span>
-            <span className="block text-misty-purple transform hover:scale-105 transition-transform duration-500" style={{animationDelay: '0.2s'}}>
+            <span className={`block text-misty-purple transform transition-all duration-1000 ease-out ${
+              visibleSections.has('section-0') ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-95'
+            }`} style={{transitionDelay: '0.3s'}}>
               讓人記住
             </span>
-            <span className="block transform hover:scale-105 transition-transform duration-500" style={{animationDelay: '0.4s'}}>
+            <span className={`block transform transition-all duration-1000 ease-out ${
+              visibleSections.has('section-0') ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-16 rotate-2'
+            }`} style={{transitionDelay: '0.6s'}}>
               的品牌
             </span>
           </h1>
           
-          {/* Subtitle with Creative Typography */}
-          <p className="text-2xl md:text-3xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed font-normal tracking-wide">
+          {/* Enhanced Subtitle with Creative Typography */}
+          <p className={`text-2xl md:text-3xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed font-normal tracking-wide transform transition-all duration-1000 ease-out ${
+            visibleSections.has('section-0') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`} style={{transitionDelay: '0.9s'}}>
             我們專做<span className="text-misty-purple font-semibold">形象網站</span>，從設計、技術到細節，<br />
             協助企業建立有質感、有目的的<span className="text-misty-purple font-semibold">數位門面</span>
           </p>
