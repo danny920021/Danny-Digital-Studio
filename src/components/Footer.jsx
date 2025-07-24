@@ -1,139 +1,105 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  const [email, setEmail] = useState('');
-
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    // 這裡可以加入訂閱邏輯
-    console.log('訂閱電子報:', email);
-    setEmail('');
-  };
-
   return (
     <footer className="bg-gray-900 text-white">
       {/* 主要內容區域 */}
       <div className="container mx-auto px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           
-          {/* 左側 - 品牌區塊 */}
+          {/* 品牌區塊 */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold mb-4">Kodea Studio</h3>
+            <Link to="/" className="text-2xl font-bold mb-4 block hover:text-misty-purple transition-colors duration-300">
+              Kodea Studio
+            </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              創意驅動，科技引領未來。我們致力於將品牌與數位體驗結合。
+              專業數位品牌工作室，專注品牌形象網站設計，為中小企業打造專業的線上品牌形象。
             </p>
             
-            {/* 社群媒體圖示 */}
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-misty-purple transition-colors duration-300">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            {/* 聯絡資訊 */}
+            <div className="space-y-2 text-sm text-gray-400">
+              <div className="flex items-center space-x-2">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-              </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-misty-purple transition-colors duration-300">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.404-5.965 1.404-5.965s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.751-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-12.013C24.007 5.367 18.641.001 12.017.001z"/>
-                </svg>
-              </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-misty-purple transition-colors duration-300">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-misty-purple transition-colors duration-300">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6.938 4.503c.702 0 1.34-.059 1.92-.177.58-.119 1.081-.297 1.503-.535.421-.238.751-.551.989-.94.238-.388.357-.849.357-1.38 0-.531-.119-.992-.357-1.38C10.112.752 9.782.439 9.361.201 8.94-.037 8.439-.215 7.858-.334 7.277-.453 6.64-.512 5.938-.512S4.6-.453 4.02-.334C3.439-.215 2.938-.037 2.517.201 2.096.439 1.766.752 1.528 1.141 1.29 1.529 1.171 1.99 1.171 2.521c0 .531.119.992.357 1.38.238.389.568.702.989.94.421.238.922.416 1.503.535.58.118 1.218.177 1.92.177zm13.067 0c.702 0 1.34-.059 1.92-.177.58-.119 1.081-.297 1.503-.535.421-.238.751-.551.989-.94.238-.388.357-.849.357-1.38 0-.531-.119-.992-.357-1.38-.238-.389-.568-.702-.989-.94-.422-.238-.923-.416-1.503-.535C21.345-.453 20.707-.512 20.005-.512s-1.34.059-1.92.177c-.58.119-1.081.297-1.503.535-.421.238-.751.551-.989.94-.238.388-.357.849-.357 1.38 0 .531.119.992.357 1.38.238.389.568.702.989.94.422.238.923.416 1.503.535.58.118 1.218.177 1.92.177z"/>
-                </svg>
-              </a>
+                <span>contact@kodea-studio.com</span>
+              </div>
             </div>
           </div>
 
-          {/* 中間 - 服務項目 */}
+          {/* 服務項目 */}
           <div className="lg:col-span-1">
             <h4 className="text-lg font-semibold mb-6">服務項目</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <Link to="/services" className="text-gray-400 hover:text-white transition-colors duration-300">
                   品牌形象網站設計
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                  AI 導入與整合
-                </a>
+                <Link to="/services" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  AI 技術整合
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                  App 開發
-                </a>
+                <Link to="/services" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  應用程式開發
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                  數位行銷策略
-                </a>
+                <Link to="/services" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  客製系統開發
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                  UI/UX 設計
-                </a>
+                <Link to="/services" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  系統整合服務
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* 右側上方 - 關於我們 */}
+          {/* 快速連結 */}
           <div className="lg:col-span-1">
-            <h4 className="text-lg font-semibold mb-6">關於我們</h4>
+            <h4 className="text-lg font-semibold mb-6">快速連結</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                  公司簡介
-                </a>
+                <Link to="/about" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  關於我們
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                  團隊成員
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <Link to="/work" className="text-gray-400 hover:text-white transition-colors duration-300">
                   作品集
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                  客戶評價
-                </a>
+                <Link to="/services" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  服務內容
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <Link to="/contact" className="text-gray-400 hover:text-white transition-colors duration-300">
                   聯絡我們
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* 右側下方 - 訂閱電子報 */}
+          {/* 開始合作 */}
           <div className="lg:col-span-1">
-            <h4 className="text-lg font-semibold mb-6">訂閱電子報</h4>
+            <h4 className="text-lg font-semibold mb-6">開始合作</h4>
             <p className="text-gray-400 mb-4 text-sm leading-relaxed">
-              訂閱我們的電子報，獲取最新的設計趨勢與科技資訊。
+              準備好打造專屬的品牌網站了嗎？讓我們一起討論您的需求。
             </p>
-            <form onSubmit={handleSubscribe} className="space-y-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="您的電子郵件"
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-misty-purple transition-colors duration-300"
-                required
-              />
-              <button
-                type="submit"
-                className="w-full bg-misty-purple text-white px-4 py-2 rounded-lg font-medium hover:bg-misty-purple-dark transition-colors duration-300"
-              >
-                訂閱
-              </button>
-            </form>
+            <Link 
+              to="/contact"
+              className="inline-block bg-misty-purple-dark text-white px-6 py-3 rounded-lg font-medium hover:bg-misty-purple transition-colors duration-300"
+            >
+              開始專案
+            </Link>
           </div>
         </div>
       </div>
@@ -141,20 +107,9 @@ const Footer = () => {
       {/* 底部版權資訊 */}
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="text-center">
             <div className="text-gray-400 text-sm">
-              © 2023 Kodea Studio. All rights reserved.
-            </div>
-            <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                隱私政策
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                服務條款
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                Cookie 政策
-              </a>
+              © 2025 Kodea Studio. All rights reserved.
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 // WorkCard Component
 const WorkCard = ({ work, size = 'medium' }) => {
@@ -37,15 +38,15 @@ const WorkCard = ({ work, size = 'medium' }) => {
               <h3 className={`font-bold mb-4 ${textClasses[size]}`}>
                 {work.title}
               </h3>
-              <a 
-                href={work.link}
-                className="inline-flex items-center text-white font-medium hover:text-misty-purple-light transition-colors duration-300"
-              >
-                查看案例
-                <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
+                             <Link 
+                 to="/work"
+                 className="inline-flex items-center text-white font-medium hover:text-misty-purple-light transition-colors duration-300"
+               >
+                 查看案例
+                 <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                 </svg>
+               </Link>
             </div>
           </div>
         </div>
@@ -59,15 +60,15 @@ const WorkCard = ({ work, size = 'medium' }) => {
         <h3 className={`font-bold text-cold-gray-dark mb-2 ${textClasses[size]}`}>
           {work.title}
         </h3>
-        <a 
-          href={work.link}
-          className="inline-flex items-center text-misty-purple-dark font-medium hover:text-misty-purple transition-colors duration-300"
-        >
-          查看案例
-          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
+                 <Link 
+           to="/work"
+           className="inline-flex items-center text-misty-purple-dark font-medium hover:text-misty-purple transition-colors duration-300"
+         >
+           查看案例
+           <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+           </svg>
+         </Link>
       </div>
     </div>
   );
@@ -268,7 +269,7 @@ const Home = ({ footerRef }) => {
               {/* Enhanced Animated Paragraphs */}
               <div className="space-y-6">
                 <p className="text-gray-600 leading-relaxed text-lg hover:text-cold-gray-dark/80 transition-colors duration-300 cursor-default">
-                  Kodea Studio 成立於 2022 年，是一間專做形象網站的設計與技術工作室。<br />
+                  Kodea Studio 成立於 2025 年，是一間專做形象網站的設計與技術工作室。<br />
                   我們擅長用簡潔、有節奏的方式，呈現企業想說的事，並在技術上完整落地。
                 </p>
                 <p className="text-gray-600 leading-relaxed text-lg hover:text-cold-gray-dark/80 transition-colors duration-300 cursor-default">
@@ -430,7 +431,10 @@ const Home = ({ footerRef }) => {
                   </p>
                   
                   {/* CTA Button */}
-                  <button className="inline-flex items-center text-misty-purple-dark font-semibold hover:text-misty-purple transition-colors duration-300 group">
+                  <Link 
+                    to="/services" 
+                    className="inline-flex items-center text-misty-purple-dark font-semibold hover:text-misty-purple transition-colors duration-300 group"
+                  >
                     了解更多
                     <svg 
                       className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" 
@@ -440,7 +444,7 @@ const Home = ({ footerRef }) => {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -526,18 +530,18 @@ const Home = ({ footerRef }) => {
             </div>
           </div>
           
-          {/* View More Button */}
-          <div className="text-center mt-16">
-            <a 
-              href="#"
-              className="inline-flex items-center px-8 py-4 bg-misty-purple text-white rounded-full font-medium hover:bg-misty-purple-dark transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-            >
-              查看更多作品
-              <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
+                                           {/* View More Button */}
+            <div className="text-center mt-16">
+              <Link 
+                to="/work"
+                className="inline-flex items-center px-8 py-4 bg-misty-purple-dark text-white rounded-full font-medium hover:bg-misty-purple transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+              >
+                查看更多作品
+                <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
         </div>
       </section>
 
@@ -553,14 +557,20 @@ const Home = ({ footerRef }) => {
           <p className="text-white/90 mb-8 max-w-2xl mx-auto text-lg">
             讓我們一起討論您的需求，為您的品牌打造專屬的數位解決方案
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-misty-purple-dark px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-              立即諮詢
-            </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-misty-purple-dark transition-colors duration-300">
-              查看作品
-            </button>
-          </div>
+                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
+             <Link 
+               to="/contact"
+               className="bg-white text-misty-purple-dark px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 text-center"
+             >
+               立即諮詢
+             </Link>
+             <Link 
+               to="/work"
+               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-misty-purple-dark transition-colors duration-300 text-center"
+             >
+               查看作品
+             </Link>
+           </div>
         </div>
       </section>
     </div>

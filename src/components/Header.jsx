@@ -5,24 +5,44 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollOpacity, setScrollOpacity] = useState(0);
   const location = useLocation();
+  
+  // 判斷當前頁面的 Hero 背景類型
+  const isLightHeroPage = location.pathname === '/about';
+  const isDarkHeroPage = location.pathname === '/' || location.pathname === '/work' || location.pathname === '/services' || location.pathname === '/contact';
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
       
-      // 從 Hero 區塊 70% 的位置開始過渡，90% 位置完全變色
-      const startTransition = windowHeight * 0.7;
-      const endTransition = windowHeight * 0.9;
-      
-      if (scrollY < startTransition) {
-        setScrollOpacity(0);
-      } else if (scrollY > endTransition) {
-        setScrollOpacity(1);
+      // Services 頁面使用較小的 Hero，調整判斷邏輯
+      if (location.pathname === '/services') {
+        // Services 頁面的 Hero 較小，從 20% 開始過渡，35% 完全變色
+        const startTransition = windowHeight * 0.2;
+        const endTransition = windowHeight * 0.35;
+        
+        if (scrollY < startTransition) {
+          setScrollOpacity(0);
+        } else if (scrollY > endTransition) {
+          setScrollOpacity(1);
+        } else {
+          const progress = (scrollY - startTransition) / (endTransition - startTransition);
+          setScrollOpacity(progress);
+        }
       } else {
-        // 在過渡區間內計算透明度
-        const progress = (scrollY - startTransition) / (endTransition - startTransition);
-        setScrollOpacity(progress);
+        // 其他頁面從 Hero 區塊 70% 的位置開始過渡，90% 位置完全變色
+        const startTransition = windowHeight * 0.7;
+        const endTransition = windowHeight * 0.9;
+        
+        if (scrollY < startTransition) {
+          setScrollOpacity(0);
+        } else if (scrollY > endTransition) {
+          setScrollOpacity(1);
+        } else {
+          // 在過渡區間內計算透明度
+          const progress = (scrollY - startTransition) / (endTransition - startTransition);
+          setScrollOpacity(progress);
+        }
       }
     };
 
@@ -42,15 +62,27 @@ const Header = () => {
     <header 
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out"
       style={{
-        backgroundColor: `rgba(255, 255, 255, ${scrollOpacity * 0.95})`,
-        backdropFilter: scrollOpacity > 0 ? 'blur(12px)' : 'none',
+        backgroundColor: isLightHeroPage && scrollOpacity < 0.1
+          ? 'rgba(255, 255, 255, 0.1)' // 淺色頁面給予輕微白色背景
+          : `rgba(255, 255, 255, ${Math.max(scrollOpacity * 0.95, isLightHeroPage ? 0.1 : 0)})`,
+        backdropFilter: (scrollOpacity > 0 || isLightHeroPage) ? 'blur(12px)' : 'none',
         boxShadow: scrollOpacity > 0.5 ? '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' : 'none'
       }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-misty-purple-dark hover:text-misty-purple transition-colors duration-300">
+          <Link 
+            to="/" 
+            className="text-2xl font-bold hover:text-misty-purple transition-colors duration-300"
+            style={{
+              color: scrollOpacity > 0.3 
+                ? '#775C91' // 滾動後始終使用品牌色
+                : isLightHeroPage 
+                  ? '#775C91' // 淺色頁面使用品牌色
+                  : '#FFFFFF' // 深色頁面使用白色
+            }}
+          >
             Kodea Studio
           </Link>
 
@@ -61,18 +93,25 @@ const Header = () => {
                 key={item.name}
                 to={item.path}
                 className="text-sm font-medium transition-colors duration-500"
-                                 style={{
-                   color: location.pathname === item.path
-                     ? '#775C91' // misty-purple-dark
-                     : `rgb(${255 - (255 - 55) * scrollOpacity}, ${255 - (255 - 65) * scrollOpacity}, ${255 - (255 - 81) * scrollOpacity})` // white to gray-700
-                 }}
+                style={{
+                  color: location.pathname === item.path
+                    ? '#775C91' // 當前頁面始終使用品牌色
+                    : scrollOpacity > 0.3
+                      ? '#374151' // 滾動後使用深灰色
+                      : isLightHeroPage
+                        ? '#374151' // 淺色頁面使用深灰色
+                        : '#FFFFFF' // 深色頁面使用白色
+                }}
               >
                 {item.name}
               </Link>
             ))}
-            <button className="bg-misty-purple-dark text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-misty-purple transition-colors duration-300">
+            <Link 
+              to="/contact"
+              className="bg-misty-purple-dark text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-misty-purple transition-colors duration-300"
+            >
               開始專案
-            </button>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -85,19 +124,31 @@ const Header = () => {
               <span 
                 className={`block w-5 h-0.5 bg-current transition-all duration-500 ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}`}
                 style={{
-                  color: `rgb(${255 - (255 - 55) * scrollOpacity}, ${255 - (255 - 65) * scrollOpacity}, ${255 - (255 - 81) * scrollOpacity})`
+                  color: scrollOpacity > 0.3
+                    ? '#374151' // 滾動後使用深灰色
+                    : isLightHeroPage
+                      ? '#374151' // 淺色頁面使用深灰色
+                      : '#FFFFFF' // 深色頁面使用白色
                 }}
               ></span>
               <span 
                 className={`block w-5 h-0.5 bg-current transition-all duration-500 mt-1 ${isMenuOpen ? 'opacity-0' : ''}`}
                 style={{
-                  color: `rgb(${255 - (255 - 55) * scrollOpacity}, ${255 - (255 - 65) * scrollOpacity}, ${255 - (255 - 81) * scrollOpacity})`
+                  color: scrollOpacity > 0.3
+                    ? '#374151' // 滾動後使用深灰色
+                    : isLightHeroPage
+                      ? '#374151' // 淺色頁面使用深灰色
+                      : '#FFFFFF' // 深色頁面使用白色
                 }}
               ></span>
               <span 
                 className={`block w-5 h-0.5 bg-current transition-all duration-500 mt-1 ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''}`}
                 style={{
-                  color: `rgb(${255 - (255 - 55) * scrollOpacity}, ${255 - (255 - 65) * scrollOpacity}, ${255 - (255 - 81) * scrollOpacity})`
+                  color: scrollOpacity > 0.3
+                    ? '#374151' // 滾動後使用深灰色
+                    : isLightHeroPage
+                      ? '#374151' // 淺色頁面使用深灰色
+                      : '#FFFFFF' // 深色頁面使用白色
                 }}
               ></span>
             </div>
@@ -125,10 +176,14 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <button className="w-full bg-misty-purple-dark text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-misty-purple transition-colors duration-300">
+            <Link 
+              to="/contact"
+              className="block w-full bg-misty-purple-dark text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-misty-purple transition-colors duration-300 text-center"
+              onClick={() => setIsMenuOpen(false)}
+            >
               開始專案
-            </button>
-            </nav>
+            </Link>
+          </nav>
           </div>
         </div>
       </div>

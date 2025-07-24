@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import DannyPhoto from '../assets/images/Danny.jpg';
+import BrucePhoto from '../assets/images/Bruce.jpg';
+import JustinPhoto from '../assets/images/Justin.jpg';
+import TimPhoto from '../assets/images/Tim.jpg';
+import EricPhoto from '../assets/images/Eric.jpg';
 
 const About = () => {
   const [visibleSections, setVisibleSections] = useState(new Set());
@@ -7,12 +12,11 @@ const About = () => {
 
   const heroRef = useRef(null);
   const whoWeAreRef = useRef(null);
-  const valuesRef = useRef(null);
   const teamRef = useRef(null);
-  const workflowRef = useRef(null);
+  const valuesRef = useRef(null);
   const ctaRef = useRef(null);
 
-  const sections = [heroRef, whoWeAreRef, valuesRef, teamRef, workflowRef, ctaRef];
+  const sections = [heroRef, whoWeAreRef, teamRef, valuesRef, ctaRef];
 
   // Intersection Observer for scroll animations
   useEffect(() => {
@@ -130,7 +134,7 @@ const About = () => {
       {/* Who We Are Section */}
       <section 
         ref={whoWeAreRef}
-        className={`py-32 relative overflow-hidden transition-all duration-1000 ease-out ${
+        className={`py-24 relative overflow-hidden transition-all duration-1000 ease-out ${
           visibleSections.has('section-1') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
         }`}
       >
@@ -149,9 +153,9 @@ const About = () => {
               Who we are
             </div>
             <h2 className="text-4xl lg:text-6xl font-bold text-cold-gray-dark leading-tight max-w-4xl mx-auto">
-              年輕的創意工作室，專注
-              <span className="text-misty-purple-dark block lg:inline"> 品牌數位化</span>
-            </h2>
+              專業數位品牌工作室，專注
+              <span className="text-misty-purple-dark block lg:inline"> 品牌形象網站設計</span>
+              </h2>
           </div>
 
           {/* Content in Cards Layout */}
@@ -166,8 +170,8 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-cold-gray-dark mb-4">我們的故事</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  我們是一群對設計充滿熱忱的年輕創作者，相信每個品牌都有其獨特的故事值得被精緻地呈現。
-                  成立於 2022 年的 Kodea Studio，專精於為中小企業與新創團隊打造具有質感與目的性的品牌形象網站。
+                  我們是一群深耕數位品牌領域的專業設計師與開發者，相信優質的品牌網站能為企業帶來實質價值。
+                  成立於 2025 年的 Kodea Studio，專精於為中小企業打造高品質的品牌形象網站，並提供 AI 技術整合與應用程式開發服務。
                 </p>
               </div>
 
@@ -180,8 +184,8 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-cold-gray-dark mb-4">設計哲學</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  我們不追求花俏的視覺效果，而是透過簡潔有力的設計語言，讓使用者能夠直觀地理解品牌價值。
-                  每個專案都是量身打造，因為我們深信，最好的設計來自於對品牌本質的深度理解。
+                  我們堅持以使用者體驗為核心，運用現代化的設計理念與前瞻技術，創造既美觀又實用的數位解決方案。
+                  每個專案都經過深度策略分析，確保設計不僅提升品牌形象，更能有效達成商業目標。
                 </p>
               </div>
             </div>
@@ -190,8 +194,8 @@ const About = () => {
             <div className="bg-gradient-to-r from-cold-gray-dark to-misty-purple-dark rounded-3xl p-12 text-center text-white mb-16">
               <h3 className="text-3xl font-bold mb-6">我們的使命</h3>
               <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">
-                從概念發想到技術實現，我們提供完整的數位品牌解決方案，
-                協助企業建立有質感、有目的的數位門面，讓品牌在數位世界中發光。
+                從品牌策略規劃到技術實現，我們提供一站式的數位品牌服務，
+                協助中小企業建立專業、高效的線上品牌形象，在競爭激烈的數位市場中脫穎而出。
               </p>
             </div>
 
@@ -200,11 +204,135 @@ const About = () => {
         </div>
       </section>
 
+      {/* Team Section */}
+      <section 
+        ref={teamRef}
+        className={`py-20 relative bg-gray-50 transition-all duration-1000 ease-out ${
+          visibleSections.has('section-2') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+        }`}
+      >
+        <div className="container mx-auto px-8">
+          <div className="text-center mb-20">
+            <div className="inline-block px-4 py-2 bg-white text-misty-purple-dark text-sm font-medium rounded-full mb-6 shadow-sm">
+              Our Team
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-cold-gray-dark mb-6">
+              我們的團隊
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              用心打造每個專案的夥伴
+            </p>
+          </div>
+          
+          {/* Full-Photo Team Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
+            {[
+              {
+                name: "Danny",
+                role: "創辦人 / 全端 / PM ",
+                bio: "結合技術實力與商業思維，擅長打造具品牌深度的數位產品，從策略規劃到實作皆可上手。",
+                education: "雪梨科大 人工智慧學系 碩士",
+                photo: DannyPhoto,
+                hasPhoto: true
+              },
+              {
+                name: "Bruce",
+                role: "前端工程師", 
+                bio: "擅長將設計語言轉換為前端介面，具備良好系統思維與開發邏輯，致力於打造兼具效能與體驗的數位產品。",
+                education: "世新大學 資訊管理學系 碩士",
+                photo: BrucePhoto,
+                hasPhoto: true
+              },
+              {
+                name: "Justin",
+                role: "後端工程師",
+                bio: "專注於系統架構設計與資料流程優化，擅長 API 串接與資料庫管理，致力於打造穩定、安全、可擴展的後端服務。",
+                education: "世新大學 資訊管理學系 碩士",
+                photo: JustinPhoto,
+                hasPhoto: true
+              },
+              {
+                  name: "Tim",
+                  role: "UI/UX Designer",
+                  bio: "致力於創造直覺且有美感的數位體驗，擅長使用者研究、介面設計與設計系統規劃，將使用者需求轉化為具體可用的產品。",
+                  education: "世新大學 資訊管理學系 碩士",
+                  photo: TimPhoto,
+                  hasPhoto: true
+              },
+              {
+                  name: "Eric",
+                  role: "QA 測試工程師",
+                  bio: "擅長撰寫測試案例與流程管理，具備細膩邏輯與跨部門溝通能力，致力於提升產品穩定性與用戶體驗品質。",
+                  education: "世新大學 資訊管理學系 碩士",
+                  photo: EricPhoto,
+                  hasPhoto: true
+              }
+              
+            ].map((member, index) => (
+              <div 
+                key={index} 
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ease-out md:hover:scale-105 md:hover:-translate-y-2 md:cursor-pointer h-80"
+              >
+                {/* Full Photo Background */}
+                <div className="absolute inset-0">
+                  <img 
+                    src={member.photo} 
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                </div>
+
+                {/* Default State - Name & Role at Bottom (always visible on mobile) */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white md:group-hover:opacity-0 transition-opacity duration-300">
+                  <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                  <p className="text-sm opacity-90">{member.role}</p>
+                </div>
+
+                {/* Hover State - Full Screen Overlay (desktop only) */}
+                <div className="hidden md:flex absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out flex-col justify-center items-center p-6">
+                  <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out">
+                    <h3 className="text-2xl font-bold mb-3">
+                      {member.name}
+                    </h3>
+                    <p className="text-lg font-medium text-misty-purple-light mb-4">
+                      {member.role}
+                    </p>
+                    <p className="text-sm leading-relaxed mb-4 max-w-xs">
+                      {member.bio}
+                    </p>
+                    <p className="text-xs opacity-80">
+                      {member.education}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Mobile Info Panel - Always visible on mobile */}
+                <div className="md:hidden absolute inset-x-0 bottom-0 bg-white/95 backdrop-blur-sm p-4 rounded-b-2xl">
+                  <div className="text-center">
+                    <h3 className="text-lg font-bold text-cold-gray-dark mb-1">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm font-medium text-misty-purple-dark mb-2">
+                      {member.role}
+                    </p>
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      {member.education}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Our Values Section */}
       <section 
         ref={valuesRef}
-        className={`py-32 bg-gray-50 relative overflow-hidden transition-all duration-1000 ease-out ${
-          visibleSections.has('section-2') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+        className={`py-24 bg-gray-50 relative overflow-hidden transition-all duration-1000 ease-out ${
+          visibleSections.has('section-3') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
         }`}
       >
         {/* Enhanced Background elements */}
@@ -286,15 +414,18 @@ const About = () => {
             ].map((value, index) => (
               <div 
                 key={index} 
-                className={`bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-500 group transform ${
-                  visibleSections.has('section-2') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                className={`bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-150 ease-out group transform ${
+                  visibleSections.has('section-3') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
-                style={{transitionDelay: `${index * 0.2}s`}}
+                style={{
+                  transitionDelay: `${index * 0.2}s`,
+                  transition: 'box-shadow 0.15s ease-out, opacity 1s ease-out, transform 1s ease-out'
+                }}
               >
-                <div className="w-16 h-16 bg-misty-purple-light rounded-2xl flex items-center justify-center text-misty-purple-dark mb-6 group-hover:bg-misty-purple-dark group-hover:text-white transition-all duration-300 group-hover:scale-110">
+                <div className="w-16 h-16 bg-misty-purple-light rounded-2xl flex items-center justify-center text-misty-purple-dark mb-6 transition-all duration-250 ease-out group-hover:bg-misty-purple-dark group-hover:text-white group-hover:scale-105">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-bold text-cold-gray-dark mb-4 group-hover:text-misty-purple-dark transition-colors duration-300">{value.title}</h3>
+                <h3 className="text-xl font-bold text-cold-gray-dark mb-4 group-hover:text-misty-purple-dark transition-colors duration-250 ease-out">{value.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{value.description}</p>
               </div>
             ))}
@@ -302,201 +433,13 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section 
-        ref={teamRef}
-        className={`py-32 relative bg-gray-50 transition-all duration-1000 ease-out ${
-          visibleSections.has('section-3') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
-        }`}
-      >
-        <div className="container mx-auto px-8">
-          <div className="text-center mb-20">
-            <div className="inline-block px-4 py-2 bg-white text-misty-purple-dark text-sm font-medium rounded-full mb-6 shadow-sm">
-              Our Team
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-cold-gray-dark mb-6">
-              我們的團隊
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              用心打造每個專案的創意夥伴
-            </p>
-          </div>
-          
-          {/* Full-Photo Team Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {[
-              {
-                name: "Danny",
-                role: "創意總監",
-                bio: "擁有 8+ 年品牌設計經驗，專精於品牌識別與視覺系統建立，致力於將創意轉化為有意義的設計解決方案。",
-                education: "實踐大學 媒體傳達設計學系",
-                photo: DannyPhoto,
-                hasPhoto: true
-              },
-              {
-                name: "Alex",
-                role: "技術總監", 
-                bio: "前端與後端技術專家，致力於將設計完美轉化為數位體驗，擅長現代 web 技術與系統架構設計。",
-                education: "台科大 資訊工程系",
-                photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-                hasPhoto: true
-              },
-              {
-                name: "Sarah",
-                role: "體驗設計師",
-                bio: "專注於使用者研究與互動設計，確保每個觸點都有意義，以人為本的設計思維創造直觀的使用體驗。",
-                education: "台藝大 多媒體動畫藝術學系",
-                photo: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-                hasPhoto: true
-              },
-              {
-                name: "Mike",
-                role: "專案經理",
-                bio: "負責專案規劃與客戶溝通，確保每個專案都能按時高品質交付，是團隊與客戶之間的重要橋樑。",
-                education: "政大 企業管理學系",
-                photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-                hasPhoto: true
-              }
-            ].map((member, index) => (
-              <div 
-                key={index} 
-                className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 cursor-pointer h-80"
-              >
-                {/* Full Photo Background */}
-                <div className="absolute inset-0">
-                  <img 
-                    src={member.photo} 
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                </div>
 
-                {/* Default State - Name & Role at Bottom */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white group-hover:opacity-0 transition-opacity duration-300">
-                  <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                  <p className="text-sm opacity-90">{member.role}</p>
-                </div>
-
-                {/* Hover State - Detailed Info Overlay */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out flex flex-col justify-center">
-                  <div className="bg-white mx-3 my-6 p-6 rounded-2xl shadow-2xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                    <div className="text-center">
-                      <h3 className="text-xl font-bold text-cold-gray-dark mb-2">
-                        {member.name}
-                      </h3>
-                      <p className="text-sm font-medium text-misty-purple-dark mb-4">
-                        {member.role}
-                      </p>
-                      <p className="text-sm text-gray-600 leading-relaxed mb-3">
-                        {member.bio}
-                      </p>
-                      <p className="text-xs text-gray-500">
-                        {member.education}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How We Work Section */}
-      <section 
-        ref={workflowRef}
-        className={`py-32 bg-gray-50 transition-all duration-1000 ease-out ${
-          visibleSections.has('section-4') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
-        }`}
-      >
-        <div className="container mx-auto px-8">
-          <div className="text-center mb-20">
-            <div className="inline-block px-4 py-2 bg-white text-misty-purple-dark text-sm font-medium rounded-full mb-6 shadow-sm">
-              How we work
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-cold-gray-dark mb-6">
-              我們的合作流程
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              透明且有系統的工作流程，確保每個專案都能順利達成目標
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-12">
-              {[
-                {
-                  step: "01",
-                  title: "深度探索",
-                  subtitle: "Discovery & Strategy",
-                  description: "了解品牌故事、目標受眾與商業需求，制定專案策略與視覺方向",
-                  deliverables: ["品牌分析報告", "目標受眾研究", "競品分析", "專案策略"]
-                },
-                {
-                  step: "02", 
-                  title: "概念設計",
-                  subtitle: "Concept & Design",
-                  description: "根據策略發展視覺概念，設計網站架構與使用者介面",
-                  deliverables: ["網站架構圖", "視覺風格指南", "頁面設計稿", "互動原型"]
-                },
-                {
-                  step: "03",
-                  title: "技術開發",
-                  subtitle: "Development & Build",
-                  description: "將設計轉化為功能完整的網站，確保性能與相容性",
-                  deliverables: ["響應式網站", "內容管理系統", "性能優化", "跨瀏覽器測試"]
-                },
-                {
-                  step: "04",
-                  title: "測試上線",
-                  subtitle: "Testing & Launch",
-                  description: "全面測試網站功能，協助客戶上線並提供後續支援",
-                  deliverables: ["功能測試報告", "網站上線", "操作教學", "維護文件"]
-                }
-              ].map((phase, index) => (
-                <div 
-                  key={index} 
-                  className={`flex flex-col lg:flex-row items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-12 transform transition-all duration-700 ease-out ${
-                    visibleSections.has('section-4') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-16'
-                  }`}
-                  style={{transitionDelay: `${index * 0.3}s`}}
-                >
-                  <div className="flex-shrink-0">
-                    <div className="w-20 h-20 bg-misty-purple-dark text-white rounded-2xl flex items-center justify-center text-2xl font-bold hover:scale-110 transition-transform duration-300">
-                      {phase.step}
-                    </div>
-                  </div>
-                  
-                  <div className="flex-grow bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                    <div className="mb-4">
-                      <h3 className="text-2xl font-bold text-cold-gray-dark mb-1 group-hover:text-misty-purple-dark transition-colors duration-300">{phase.title}</h3>
-                      <p className="text-misty-purple-dark font-medium">{phase.subtitle}</p>
-                    </div>
-                    
-                    <p className="text-gray-600 mb-4 leading-relaxed">{phase.description}</p>
-                    
-                    <div className="flex flex-wrap gap-2">
-                      {phase.deliverables.map((item, itemIndex) => (
-                        <span key={itemIndex} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-lg">
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section 
         ref={ctaRef}
-        className={`py-32 relative overflow-hidden transition-all duration-1000 ease-out ${
-          visibleSections.has('section-5') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+        className={`py-24 relative overflow-hidden transition-all duration-1000 ease-out ${
+          visibleSections.has('section-4') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
         }`}
       >
         {/* Enhanced Background */}
@@ -520,29 +463,22 @@ const About = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="px-8 py-4 bg-white text-misty-purple-dark font-bold rounded-2xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+              <Link 
+                to="/contact"
+                className="px-8 py-4 bg-white text-misty-purple-dark font-bold rounded-2xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-center"
+              >
                 開始合作討論
-              </button>
-              <button className="px-8 py-4 border-2 border-white text-white font-bold rounded-2xl hover:bg-white hover:text-misty-purple-dark transition-all duration-300">
+              </Link>
+              <Link 
+                to="/work"
+                className="px-8 py-4 border-2 border-white text-white font-bold rounded-2xl hover:bg-white hover:text-misty-purple-dark transition-all duration-300 text-center"
+              >
                 查看更多作品
-              </button>
+              </Link>
             </div>
             
             <div className="mt-16 flex items-center justify-center space-x-8 text-white/60">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">50+</div>
-                <div className="text-sm">成功專案</div>
-              </div>
-              <div className="w-px h-8 bg-white/20"></div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">24h</div>
-                <div className="text-sm">快速回應</div>
-              </div>
-              <div className="w-px h-8 bg-white/20"></div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">100%</div>
-                <div className="text-sm">客戶滿意</div>
-              </div>
+
             </div>
           </div>
         </div>
