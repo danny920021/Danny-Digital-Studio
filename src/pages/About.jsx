@@ -42,7 +42,7 @@ const About = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [sections]);
 
   // Hero title animation trigger
   useEffect(() => {

@@ -8,7 +8,6 @@ const Header = () => {
   
   // 判斷當前頁面的 Hero 背景類型
   const isLightHeroPage = location.pathname === '/about';
-  const isDarkHeroPage = location.pathname === '/' || location.pathname === '/work' || location.pathname === '/services' || location.pathname === '/contact';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,7 +47,7 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const navItems = [
     { name: '首頁', path: '/' },
