@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 // WorkCard Component
@@ -84,7 +84,7 @@ const Home = ({ footerRef }) => {
   const worksRef = useRef(null);
   const contactRef = useRef(null);
 
-  const sections = [heroRef, aboutRef, servicesRef, worksRef, contactRef];
+  const sections = useMemo(() => [heroRef, aboutRef, servicesRef, worksRef, contactRef], []);
 
   // Intersection Observer for scroll animations
   useEffect(() => {
@@ -110,7 +110,7 @@ const Home = ({ footerRef }) => {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [sections]);
 
   // 監聽滾動，當About區塊進入視窗時開始動畫
   useEffect(() => {

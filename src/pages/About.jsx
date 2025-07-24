@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import DannyPhoto from '../assets/images/Danny.jpg';
 import BrucePhoto from '../assets/images/Bruce.jpg';
@@ -16,7 +16,7 @@ const About = () => {
   const valuesRef = useRef(null);
   const ctaRef = useRef(null);
 
-  const sections = [heroRef, whoWeAreRef, teamRef, valuesRef, ctaRef];
+  const sections = useMemo(() => [heroRef, whoWeAreRef, teamRef, valuesRef, ctaRef], []);
 
   // Intersection Observer for scroll animations
   useEffect(() => {
@@ -179,7 +179,7 @@ const About = () => {
               <div className="bg-misty-purple-light rounded-3xl p-8 hover:shadow-lg transition-all duration-300">
                 <div className="w-12 h-12 bg-misty-purple-dark rounded-2xl flex items-center justify-center mb-6">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-cold-gray-dark mb-4">設計哲學</h3>

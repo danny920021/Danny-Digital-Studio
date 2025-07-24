@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 
 const Services = () => {
   const [visibleSections, setVisibleSections] = useState(new Set());
@@ -9,7 +9,7 @@ const Services = () => {
   const whyChooseRef = useRef(null);
   const ctaRef = useRef(null);
 
-  const sections = [coreServicesRef, specialtiesRef, processRef, whyChooseRef, ctaRef];
+  const sections = useMemo(() => [coreServicesRef, specialtiesRef, processRef, whyChooseRef, ctaRef], []);
 
   // Intersection Observer for scroll animations
   useEffect(() => {
@@ -26,6 +26,7 @@ const Services = () => {
       });
     }, observerOptions);
 
+    // 觀察所有 section
     sections.forEach((ref, index) => {
       if (ref.current) {
         ref.current.id = `section-${index}`;
@@ -34,7 +35,7 @@ const Services = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [sections]);
 
   return (
     <div className="bg-white font-sans">

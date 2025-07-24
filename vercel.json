@@ -16,6 +16,11 @@
       "dest": "/index.html"
     }
   ],
+  "build": {
+    "env": {
+      "CI": "false"
+    }
+  },
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "framework": "create-react-app"
