@@ -18,51 +18,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'cold-gray-light': '#DADDE3',
-              'cold-gray-medium': '#A5A8AD',
-              'cold-gray-dark': '#2B2C30',
-              'misty-purple-light': '#F2EFF6',
-              'misty-purple': '#9A8FB6',
-              'misty-purple-dark': '#775C91',
-            },
-            fontFamily: {
-              'sans': ['Noto Sans TC', 'sans-serif'],
-              'serif': ['Noto Sans TC', 'serif'],
-            },
-            animation: {
-              'float-fade': 'float-fade 3s ease-in-out infinite',
-            },
-            keyframes: {
-              'float-fade': {
-                '0%, 100%': { transform: 'translateY(0px)', opacity: '0.8' },
-                '50%': { transform: 'translateY(-20px)', opacity: '1' },
-              }
-            }
-          }
-        }
-      }
-    </script>
+    <script src="https://cdn.tailwindcss.com?v=3.4.0"></script>
     
     <title>Kodea Studio - 品牌形象網站設計與開發</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    
+    <script>
+      // Configure Tailwind after it loads
+      if (typeof tailwind !== 'undefined') {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'cold-gray-light': '#DADDE3',
+                'cold-gray-medium': '#A5A8AD',
+                'cold-gray-dark': '#2B2C30',
+                'misty-purple-light': '#F2EFF6',
+                'misty-purple': '#9A8FB6',
+                'misty-purple-dark': '#775C91',
+              },
+              fontFamily: {
+                'sans': ['Noto Sans TC', 'sans-serif'],
+                'serif': ['Noto Sans TC', 'serif'],
+              },
+              animation: {
+                'float-fade': 'float-fade 3s ease-in-out infinite',
+              },
+              keyframes: {
+                'float-fade': {
+                  '0%, 100%': { transform: 'translateY(0px)', opacity: '0.8' },
+                  '50%': { transform: 'translateY(-20px)', opacity: '1' },
+                }
+              }
+            }
+          }
+        }
+      }
+    </script>
   </body>
 </html>
