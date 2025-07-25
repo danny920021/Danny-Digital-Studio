@@ -1,57 +1,76 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+// 導入圖片
+import luxaryblockImg from '../assets/images/luxaryblock.jpg';
+import naviverseImg from '../assets/images/naviverse.jpg';
+import nftotalImg from '../assets/images/nftotal.jpg';
+import ticketgoImg from '../assets/images/ticketgo.jpg';
+import coveImg from '../assets/images/cove.jpg';
+import ieltsImg from '../assets/images/ielts.jpg';
 
 const Work = () => {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const categories = [
     { id: 'all', name: '全部' },
-    { id: 'website', name: '網站設計' },
-    { id: 'app', name: '應用程式' },
-    { id: 'branding', name: '品牌設計' }
+    { id: 'ecommerce', name: '電商網站' },
+    { id: 'community', name: '社群經營 / BD' },
+    { id: 'education', name: '教育平台' },
+    { id: 'website', name: '網站設計' }
   ];
 
+  // 根據圖片來源決定對齊方式
+  const getObjectPosition = (imageSrc) => {
+    if (imageSrc === luxaryblockImg || imageSrc === ticketgoImg) {
+      return 'object-top';
+    }
+    return 'object-center';
+  };
+
   const works = [
+    // 真實專案作品
     {
       id: 1,
-      title: "精品咖啡品牌網站",
-      category: "website",
-      image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "為精品咖啡品牌打造的響應式網站，展現品牌質感與產品特色。"
+      title: "Luxury Block",
+      category: "ecommerce",
+      image: luxaryblockImg,
+      description: "高端精品電商平台，結合現代設計與頂級購物體驗，打造奢華品牌數位門面。"
     },
     {
       id: 2,
-      title: "新創科技公司官網",
-      category: "website",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "現代化的企業官網設計，突出技術實力與創新精神。"
+      title: "Naviverse",
+      category: "community",
+      image: naviverseImg,
+      description: "創新社群平台設計，專注於用戶互動體驗與商業發展策略整合。"
     },
     {
       id: 3,
-      title: "設計工作室作品集",
-      category: "website",
-      image: "https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "簡潔優雅的作品集網站，完美呈現設計作品與品牌形象。"
+      title: "NFTotal",
+      category: "community",
+      image: nftotalImg,
+      description: "NFT 社群生態平台，融合區塊鏈技術與社群經營的創新解決方案。"
     },
     {
       id: 4,
-      title: "電商平台 App",
-      category: "app",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "跨平台電商應用程式，提供流暢的購物體驗。"
+      title: "TicketGo",
+      category: "ecommerce",
+      image: ticketgoImg,
+      description: "票務電商平台設計，提供流暢的票券購買體驗與活動管理系統。"
     },
     {
       id: 5,
-      title: "企業管理系統",
-      category: "app",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "客製化企業管理系統，提升營運效率與數據管理。"
+      title: "Cove",
+      category: "website",
+      image: coveImg,
+      description: "現代化企業網站設計，展現品牌專業形象與核心價值。"
     },
     {
       id: 6,
-      title: "品牌視覺識別設計",
-      category: "branding",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "完整的品牌視覺識別系統設計，建立獨特的品牌形象。"
+      title: "IELTS",
+      category: "education",
+      image: ieltsImg,
+      description: "IELTS 學習平台，整合教學資源與互動學習體驗的教育網站。"
     }
   ];
 
@@ -107,7 +126,7 @@ const Work = () => {
                   <img
                     src={work.image}
                     alt={work.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className={`w-full h-full object-cover ${getObjectPosition(work.image)} group-hover:scale-110 transition-transform duration-500`}
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                 </div>
@@ -140,12 +159,18 @@ const Work = () => {
             讓我們一起討論您的需求，為您的品牌打造專屬的數位解決方案
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-misty-purple-dark px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+            <Link 
+              to="/contact"
+              className="bg-white text-misty-purple-dark px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 text-center"
+            >
               立即諮詢
-            </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-misty-purple-dark transition-colors duration-300">
+            </Link>
+            <Link 
+              to="/services"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-misty-purple-dark transition-colors duration-300 text-center"
+            >
               了解更多
-            </button>
+            </Link>
           </div>
         </div>
       </section>

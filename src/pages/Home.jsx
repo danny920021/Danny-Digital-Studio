@@ -1,11 +1,16 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
+// 導入圖片
+import luxaryblockImg from '../assets/images/luxaryblock.jpg';
+import naviverseImg from '../assets/images/naviverse.jpg';
+import nftotalImg from '../assets/images/nftotal.jpg';
+import ticketgoImg from '../assets/images/ticketgo.jpg';
 // WorkCard Component
 const WorkCard = ({ work, size = 'medium' }) => {
   const sizeClasses = {
-    large: 'h-64',
-    small: 'h-64'  // 小的高度跟大的一樣
+    large: 'h-64',     // 增加大卡片高度
+    small: 'h-64'      // 保持小卡片高度
   };
 
   const textClasses = {
@@ -18,6 +23,14 @@ const WorkCard = ({ work, size = 'medium' }) => {
     small: 'p-4'
   };
 
+  // 根據圖片來源決定對齊方式
+  const getObjectPosition = (imageSrc) => {
+    if (imageSrc === luxaryblockImg || imageSrc === ticketgoImg) {
+      return 'object-top';
+    }
+    return 'object-center';
+  };
+
   return (
     <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
       {/* Image Container */}
@@ -25,7 +38,7 @@ const WorkCard = ({ work, size = 'medium' }) => {
         <img 
           src={work.image} 
           alt={work.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className={`w-full h-full object-cover ${getObjectPosition(work.image)} transition-transform duration-700 group-hover:scale-110`}
         />
         
         {/* Hover Overlay */}
@@ -480,9 +493,9 @@ const Home = ({ footerRef }) => {
               <div className="md:col-span-8">
                 <WorkCard
                   work={{
-                    title: "LUXE 香氛品牌官網",
-                    category: "品牌官網設計",
-                    image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/12020865f7-4be5347d113f5acbd0a8.png",
+                    title: "Luxury Block",
+                    category: "電商網站",
+                    image: luxaryblockImg,  
                     link: "#"
                   }}
                   size="large"
@@ -493,9 +506,9 @@ const Home = ({ footerRef }) => {
               <div className="md:col-span-4">
                 <WorkCard
                   work={{
-                    title: "Tempo 生產力應用",
-                    category: "App 開發 / UI 設計",
-                    image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/fef394be14-9fcaa16c4e6a3812b3f7.png",
+                    title: "Naviverse",
+                    category: "社群經營 / BD",
+                    image: naviverseImg,
                     link: "#"
                   }}
                   size="small"
@@ -506,9 +519,9 @@ const Home = ({ footerRef }) => {
               <div className="md:col-span-4">
                 <WorkCard
                   work={{
-                    title: "Serene 電商平台",
-                    category: "電商網站 / 品牌策略",
-                    image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/241bbad627-fe7d41914d0323e0b9ed.png",
+                    title: "NFTotal",
+                    category: "社群經營 / BD",
+                    image: nftotalImg,
                     link: "#"
                   }}
                   size="small"
@@ -519,11 +532,11 @@ const Home = ({ footerRef }) => {
               <div className="md:col-span-8">
                 <WorkCard
                   work={{
-                    title: "Echo 創意工作室",
-                    category: "創意網站設計",
-                    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                    title: "TicketGo",
+                    category: "電商網站",
+                    image: ticketgoImg,
                     link: "#"
-                  }}
+                  }}  
                   size="large"
                 />
               </div>
