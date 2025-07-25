@@ -14,9 +14,9 @@ const Header = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
       
-      // Services 和 Contact 頁面使用較小的 Hero，調整判斷邏輯
-      if (location.pathname === '/services' || location.pathname === '/contact') {
-        // Services 和 Contact 頁面的 Hero 較小，從 20% 開始過渡，35% 完全變色
+      // Services、Work 和 Contact 頁面使用較小的 Hero，調整判斷邏輯
+      if (location.pathname === '/services' || location.pathname === '/work' || location.pathname === '/contact') {
+        // Services、Work 和 Contact 頁面的 Hero 較小，從 20% 開始過渡，35% 完全變色
         const startTransition = windowHeight * 0.2;
         const endTransition = windowHeight * 0.35;
         
